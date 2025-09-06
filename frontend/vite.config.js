@@ -1,11 +1,18 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  css: {
+    postcss: "./postcss.config.js", // ensure TailwindCSS works
+  },
   server: {
-    port: 5173,   // default, you can change if needed
-    open: true    // auto-opens browser on `npm run dev`
-  }
-})
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000", // local backend
+        changeOrigin: true,
+      },
+    },
+  },
+});
