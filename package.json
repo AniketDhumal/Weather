@@ -1,0 +1,13 @@
+{
+  "name": "weather-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && vite",
+    "dev:server": "cd server && node server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
