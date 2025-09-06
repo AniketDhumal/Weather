@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://weather-twrv-5vzcy1das-aniket-dhumals-projects-146bfaa0.vercel.app/api/$1"
-    }
-  ]
-}
